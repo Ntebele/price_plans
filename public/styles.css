@@ -1,0 +1,127 @@
+/* Reset some default margin and padding */
+body, h1, h2, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Style the header (Phone Bill) */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.fas.fa-phone-alt {
+    color: red;
+  font-size: 1.5em; /* Adjust the size as needed */
+  margin-right: 10px; /* Add some spacing between the icon and the text */
+}
+
+input {
+    border-radius: 25px; /* Adjust the value to change the roundness */
+  }
+
+/* Style the container */
+.container {
+    border: 2px solid rgb(39, 144, 65);
+    background-color:rgb(88, 216, 199);
+    border-radius: 60px;
+    padding: 20px;
+    margin-top: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-1 {
+    border: 2px solid rgb(39, 144, 65);
+    background-color:rgb(18, 216, 180);
+    border-radius: 60px;
+    padding: 20px;
+    margin-top: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style the table */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin:auto;
+    padding: auto;
+}
+
+table, th, td {
+
+
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 40px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button:hover {
+    background-color: #179af1; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+  }
+
+/* Style the input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the buttons */
+button {
+    padding: 10px 20px;
+    background-color: #2c4a69;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+      /* Transition for smooth hover effect */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add some margin to buttons */
+button + p {
+    margin-top: 10px;
+}
+
+/* Add some space between the sections */
+.row {
+    margin-top: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    /* Center-align the header on smaller screens */
+    h1 {
+        text-align: center;
+    }
+
+    /* Remove the table border for better mobile display */
+    table, th, td {
+        border: none;
+    }
+}

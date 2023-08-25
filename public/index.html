@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total PhoneBill</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/alp.js"></script>
+    <script src="/price.js"></script>
+
+</head>
+
+<body x-data="phoneBill">
+    <h1 class="display-1"><i class="fa fa-phone"></i>Total Phone Bill</i>
+
+    </h1>
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Plan Name</th>
+                        <th>Sms Price</th>
+                        <th>Call Price</th>
+                    </tr>
+
+                    <template x-for="price in myPrice_plan">
+                        <tr>
+                            <td x-text="price.id"></td>
+                            <td x-text="price.plan_name"></td>
+                            <td x-text="price.sms_price"></td>
+                            <td x-text="price.call_price"></td>
+                        </tr>
+                    </template>
+
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container-1">
+                    <h2>DELETE BY ID</h2>
+                    <input x-model="deleteId" placeholder="ID" />
+                    <button x-on:click="deletes()">
+                        <i class="fa fa-trash-o" aria-hidden="true">Delete</i>
+                    </button>
+                    <p x-text="deleteIdmessage"></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container-1">
+                    <h2>CHECK BILL</h2>
+                    <input x-model="plan_name" placeholder=" plan name" />
+                    <input x-model="action" placeholder=" sms,call,sms,call" />
+                    <button x-on:click="bill()">
+                        <i class="fa fa-search" aria-hidden="true">Search</i>
+                    </button>
+                    <p x-text="total"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container-1">
+                    <h2>CREATE PRICE PLAN</h2>
+                    <input x-model="Create_plan_name" placeholder=" plan name" />
+                    <input x-model="Create_sms_price" placeholder=" sms price" />
+                    <input x-model="Create_call_price" placeholder=" call price" />
+                    <button x-on:click="create()"><i class="fa fa-plus-square" aria-hidden="true"></i>Create</button>
+                    <p x-text="Createmessage"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="container-1">
+                    <h2>UPDATE PRICE PLAN</h2>
+                    <input x-model="Updateid" placeholder="ID" />
+                    <input x-model="Update_plan_name" placeholder=" plan name" />
+                    <input x-model="Update_sms_price" placeholder=" sms price" />
+                    <input x-model="Update_call_price" placeholder=" call price" />
+                    <button x-on:click="update()">
+                        <i class="fa fa-pencil-square" aria-hidden="true">Update</i>
+                    </button>
+                    <p x-text="Update_message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</body>
+
+</html>
